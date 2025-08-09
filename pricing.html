@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sakura Bot - Pricing</title>
+    <link rel="icon" type="image/x-icon" href="sakuraicontop1.png">
+    <meta content="#fa68801e" data-react-helmet="true" name="theme-color" />
+    <meta
+      name="title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      name="description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta
+      property="og:title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      property="og:description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="og:image" content="logo1.png" />
+    <meta property="og:color" content="#d1d5db" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="#" />
+    <meta
+      property="twitter:title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      property="twitter:description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="twitter:image" content="logo1.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- GSAP y ScrollTrigger eliminados, no se usan -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <!-- OGL library for animated background -->
+    <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.49/dist/ogl.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.2.2/tsparticles.bundle.min.js"></script>
+  </head>
+  <body
+    class="bg-black text-white max-h-[400px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400"
+  >
+    <!-- Fondo de estrellas animadas global -->
+    <div id="stars-bg" class="pointer-events-none fixed inset-0 z-0"></div>
+    <!-- Fade-in negro animación de entrada -->
+    <div id="fade-overlay" style="position:fixed;inset:0;z-index:1000;background:black;pointer-events:none;opacity:1;transition:opacity 0.8s cubic-bezier(.6,.2,.3,1.1);"></div>
+    <style>
+      #stars-bg {
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      @keyframes starTwinkle {
+        0% { opacity: 0.3; }
+        100% { opacity: 1; }
+      }
+    </style>
+    <script>
+      // Fondo de estrellas animadas
+      function createStars() {
+        const starsContainer = document.getElementById('stars-bg');
+        if (!starsContainer) return;
+        starsContainer.innerHTML = '';
+        const numStars = 120;
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement('div');
+          const size = Math.random() * 1.2 + 0.6;
+          const duration = Math.random() * 2 + 2.5;
+          star.style.position = 'absolute';
+          star.style.top = `${Math.random() * 100}%`;
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+          star.style.borderRadius = '50%';
+          star.style.background = 'white';
+          star.style.opacity = Math.random() * 0.7 + 0.2;
+          star.style.boxShadow = `0 0 ${Math.random() * 8 + 2}px #fff8`;
+          star.style.animation = `starTwinkle ${duration}s infinite alternate`;
+          starsContainer.appendChild(star);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', createStars);
+      window.addEventListener('resize', createStars);
+      // Fade-in overlay animation
+      window.addEventListener('DOMContentLoaded', function() {
+        const fade = document.getElementById('fade-overlay');
+        setTimeout(() => {
+          fade.style.opacity = '0';
+        }, 120); // pequeño delay para que se note
+        fade.addEventListener('transitionend', () => {
+          fade.remove();
+        });
+      });
+    </script>
+    </script>
+    <nav class="fixed w-full z-50 top-0">
+      <div id="navbar-main" class="nav-blur bg-black/30 border-b border-white/10 transition-all duration-500">
+    <script>
+      // Dynamic navbar island effect on scroll
+      const navbar = document.getElementById('navbar-main');
+      // Inicialmente pegado arriba
+      navbar.style.marginTop = '0px';
+      navbar.style.width = '100%';
+      navbar.style.marginLeft = 'auto';
+      navbar.style.marginRight = 'auto';
+      navbar.style.borderRadius = '0';
+      navbar.style.boxShadow = 'none';
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 32) {
+          navbar.style.marginTop = '24px';
+          navbar.style.width = '90%';
+          navbar.style.marginLeft = 'auto';
+          navbar.style.marginRight = 'auto';
+          navbar.style.borderRadius = '2.5rem';
+          navbar.style.boxShadow = '0 0 32px 0 rgba(250, 104, 128, 0.365), 0 2px 12px 0 rgba(255,255,255,0.08)';
+        } else {
+          navbar.style.marginTop = '0px';
+          navbar.style.width = '100%';
+          navbar.style.marginLeft = 'auto';
+          navbar.style.marginRight = 'auto';
+          navbar.style.borderRadius = '0';
+          navbar.style.boxShadow = 'none';
+        }
+      });
+    </script>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <div class="flex items-center gap-2">
+              <img
+                src="sakuralogo1.png"
+                alt="Sakura Bot Logo"
+                class="w-16 h-16 rounded-xl object-contain"
+              />
+            </div>
+
+            <div class="hidden md:flex gap-8 justify-center flex-1">
+              <a href="index.html" class="nav-underline font-semibold">Home</a>
+              <a href="index.html" class="nav-underline font-semibold">Features</a>
+              <a href="index.html" class="nav-underline font-semibold">Commands</a>
+              <a href="index.html" class="nav-underline font-semibold">Testimonials</a>
+              <a href="pricing.html" class="nav-underline font-semibold">Pricing</a>
+            </div>
+
+            <div class="md:hidden">
+              <button onclick="toggleMobileMenu()" class="text-white p-2">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    class="menu-icon"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <a href="#" class="hidden md:block">
+              <a href="https://discord.com/oauth2/authorize?client_id=1361466527836147902&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer">
+                <button class="discord-btn-navbar">
+                  <img src="discord1.png" alt="Discord" class="discord-btn-navbar-img" width="24" height="24" />
+                  <span class="discord-btn-navbar-text">Add Bot</span>
+                </button>
+              </a>
+            </a>
+          </div>
+
+          <div id="mobileMenu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1" style="background:#ff0000;" class="rounded-lg mt-2">
+              <a
+                href="#hero"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Home</a
+              >
+              <a
+                href="#features"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Features</a
+              >
+              <a
+                href="#commands"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Commands</a
+              >
+              <a
+                href="#testimonials"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Testimonials</a
+              >
+              <a
+                href="pricing.html"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Pricing</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Add to Discord</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Pricing Section -->
+    <section class="pt-32 pb-16 min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-5xl font-bold mb-4 sakura-gradient-text">Pricing Plans</h2>
+          <p class="text-xl text-white/70">Choose the best plan for your server's needs.</p>
+          <div class="flex justify-center items-center mt-8">
+            <span class="text-white/70 mr-3">Show in USD</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="currencySwitch" class="sr-only peer">
+              <div id="switch-bg" class="w-14 h-7 bg-gray-700 rounded-full transition-all duration-300"></div>
+              <div id="switch-knob" class="absolute left-1 top-1 bg-white peer-checked:translate-x-7 transition-transform duration-300 w-5 h-5 rounded-full shadow-lg"></div>
+            </label>
+          </div>
+        </div>
+        <div id="pricing-cards" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section class="pt-2 pb-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-5xl font-bold mb-4 sakura-gradient-text">Payment Methods</h2>
+          <p class="text-xl text-white/70">Choose your preferred payment method</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Mercado Pago Card (Grayscale) -->
+          <div class="payment-card bg-black/80 border border-white/10 rounded-2xl p-8 shadow-xl flex flex-col items-center transition-all duration-300 hover:scale-[1.03] relative overflow-hidden">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-4" style="background:#f84965;">
+              <img src='card1.png' alt='Mercado Pago' class='w-12 h-12 object-contain filter grayscale' />
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-white">Mercado Pago</h3>
+            <p class="text-gray-400 mb-2 text-center">Payment solution for Argentina.</p>
+            <div class="w-full bg-black/60 border border-white/20 rounded-lg px-4 py-2 text-white text-sm mb-4 text-center">Open a ticket on Discord to pay.</div>
+            <button class="w-full px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-[#f84965] via-[#fa6880] to-[#f84965] text-white shadow-lg transition-all duration-300 payment-btn" onclick="window.open('https://discord.gg/n6cqRvynMt','_blank')">Communicate on Discord</button>
+          </div>
+          <!-- PayPal Card (Grayscale) -->
+          <div class="payment-card bg-black/80 border border-white/10 rounded-2xl p-8 shadow-xl flex flex-col items-center transition-all duration-300 hover:scale-[1.03] relative overflow-hidden">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-4" style="background:#f84965;">
+              <img src='paypal1.png' alt='PayPal' class='w-12 h-12 object-contain filter grayscale' />
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-white">PayPal</h3>
+            <p class="text-gray-400 mb-2 text-center">Secure payments with PayPal worldwide.</p>
+            <div class="w-full bg-black/60 border border-white/20 rounded-lg px-4 py-2 text-white text-sm mb-4 text-center">Open a ticket on Discord to pay.</div>
+            <button class="w-full px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-[#f84965] via-[#fa6880] to-[#f84965] text-white shadow-lg transition-all duration-300 payment-btn" onclick="window.open('https://discord.gg/n6cqRvynMt','_blank')">Communicate on Discord</button>
+          </div>
+          <!-- Transfer Card (Grayscale) -->
+          <div class="payment-card bg-black/80 border border-white/10 rounded-2xl p-8 shadow-xl flex flex-col items-center transition-all duration-300 hover:scale-[1.03] relative overflow-hidden">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-4" style="background:#f84965;">
+              <img src='transfer1.png' alt='Transfer' class='w-12 h-12 object-contain filter grayscale' />
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-white">Transfer</h3>
+            <p class="text-gray-400 mb-2 text-center">Pay by transfer from any bank</p>
+            <div class="w-full bg-black/60 border border-white/20 rounded-lg px-4 py-2 text-white text-sm mb-4 text-center">Open a ticket on Discord to pay.</div>
+           <button class="w-full px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-[#f84965] via-[#fa6880] to-[#f84965] text-white shadow-lg transition-all duration-300 payment-btn" onclick="window.open('https://discord.gg/n6cqRvynMt','_blank')">Communicate on Discord</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-center py-16">
+  <button onclick="scrollToTop()" class="group bg-white/5 border border-white/10 rounded-2xl p-4 transition-all hover:border-[#fa6880]">
+          <svg class="w-6 h-6 text-white/70 group-hover:text-[#fa6880] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    </footer>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      // Pricing data
+      const plans = [
+        {
+          name: 'Monthly Plan',
+          ars: 'AR$ 5,000',
+          usd: '$7.00 U$D',
+          desc: 'Consistent support and long-term value',
+          features: [
+            'Full bot access',
+            'Priority Discord support',
+            'Support development',
+            'Exclusive features',
+          ],
+          recommended: true,
+          btn: 'Choose Monthly',
+          link: 'https://discord.gg/n6cqRvynMt',
+        },
+        {
+          name: 'Quarterly Plan',
+          ars: 'AR$ 12,000',
+          usd: '$15.00 U$D',
+          desc: 'Prolonged support and exclusive discounts.',
+          features: [
+            'Full bot access',
+            'Priority Discord support',
+            'Support development',
+            'Ongoing updates',
+          ],
+          recommended: false,
+          btn: 'Choose Quarterly',
+          link: 'https://discord.gg/n6cqRvynMt',
+        },
+        {
+          name: 'Lifetime Plan',
+          ars: 'AR$ 30,000',
+          usd: '$40.00 U$D',
+          desc: 'Stand with Sakura as a long-term supporter.',
+          features: [
+            'Full bot access',
+            'Top-tier support',
+            'Lifetime benefits',
+            'Discord VIP role',
+          ],
+          recommended: false,
+          btn: 'Choose Lifetime',
+          link: 'https://discord.gg/n6cqRvynMt',
+        },
+      ];
+
+      function renderPricingCards(useUSD) {
+        const container = document.getElementById('pricing-cards');
+        container.innerHTML = '';
+        plans.forEach((plan, idx) => {
+          const isRecommended = plan.recommended;
+          container.innerHTML += `
+            <div class="relative flex flex-col items-center">
+              ${isRecommended ? `<div class='pricing-recommended-badge'>RECOMMENDED</div>` : ''}
+              <div class="feature-card pricing-card bg-black/80 border border-white/10 rounded-2xl p-8 shadow-xl transition-all duration-300 hover:scale-[1.03] flex flex-col justify-between overflow-hidden w-full">
+                <h3 class="text-3xl font-bold mb-2 sakura-gradient-text">${plan.name}</h3>
+                <div class="text-lg text-gray-200 mb-2 price-animate" data-final="${useUSD ? plan.usd : plan.ars}" data-currency="${useUSD ? 'usd' : 'ars'}">0</div>
+                <p class="text-gray-400 mb-6">${plan.desc}</p>
+                <ul class="text-gray-300 mb-8 space-y-2">
+                  ${plan.features.map(f => `<li><span class='text-white text-lg mr-2'>✿</span>${f}</li>`).join('')}
+                </ul>
+                <button class="w-full px-6 py-3 rounded-xl font-semibold choose-btn ${isRecommended ? 'bg-gradient-to-r from-[#222] to-[#f84965] text-white shadow-lg border-2 border-[#f84965]' : 'border border-gray-400 text-white bg-black/60'} transition-all duration-300" onclick="window.open('${plan.link}','_blank')">${plan.btn}</button>
+              </div>
+            </div>
+          `;
+        });
+        animatePrices();
+      }
+
+      // Initial render
+      renderPricingCards(false);
+      // Switch logic and style
+      const switchInput = document.getElementById('currencySwitch');
+      const switchBg = document.getElementById('switch-bg');
+      const switchKnob = document.getElementById('switch-knob');
+      function updateSwitchStyle() {
+        if (switchInput.checked) {
+          switchBg.className = 'w-14 h-7 bg-gradient-to-r from-[#f84965] via-[#fa6880] to-[#f84965] rounded-full shadow-lg ring-2 ring-white transition-all duration-300';
+          switchKnob.className = 'absolute left-1 top-1 bg-white peer-checked:translate-x-7 transition-transform duration-300 w-5 h-5 rounded-full shadow-lg ring-2 ring-white';
+        } else {
+          switchBg.className = 'w-14 h-7 bg-gray-700 rounded-full transition-all duration-300';
+          switchKnob.className = 'absolute left-1 top-1 bg-white peer-checked:translate-x-7 transition-transform duration-300 w-5 h-5 rounded-full shadow-lg';
+        }
+      }
+      switchInput.addEventListener('change', function(e) {
+        renderPricingCards(e.target.checked);
+        updateSwitchStyle();
+      });
+      // Animación de precios
+      function animatePrices() {
+        document.querySelectorAll('.price-animate').forEach(el => {
+          const finalText = el.getAttribute('data-final');
+          const currency = el.getAttribute('data-currency');
+          let final = 0;
+          let duration = 1200;
+          // Si es la carga inicial, animar más lento
+          if (!window._pricingAnimatedOnce) {
+            duration = 2000;
+            window._pricingAnimatedOnce = true;
+          }
+          if (currency === 'usd') {
+            final = parseFloat(finalText.replace(/[^\d.]/g, ''));
+          } else {
+            final = parseInt(finalText.replace(/[^\d]/g, ''));
+          }
+          const start = performance.now();
+          function updatePrice(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            if (currency === 'usd') {
+              // Animar con decimales y mostrar U$D
+              const value = (progress * final).toFixed(2);
+              el.textContent = `$${Number(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} U$D`;
+            } else {
+              const value = Math.floor(progress * final);
+              el.textContent = `AR$ ${value.toLocaleString()}`;
+            }
+            if (progress < 1) {
+              requestAnimationFrame(updatePrice);
+            } else {
+              el.textContent = finalText;
+            }
+          }
+          requestAnimationFrame(updatePrice);
+        });
+      }
+      updateSwitchStyle();
+    </script>
+    <style>
+      .discord-btn-navbar-img {
+        margin-right: 0.5rem;
+        vertical-align: middle;
+        filter: brightness(0) invert(1) drop-shadow(0 0 8px #fff8);
+        transition: filter 0.3s;
+      }
+      .discord-btn-navbar:hover .discord-btn-navbar-img {
+        filter: brightness(0) invert(1) drop-shadow(0 0 16px #fa6880cc);
+      }
+      .discord-btn-navbar {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.7rem 2rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border-radius: 2rem;
+        background: linear-gradient(45deg, #e04176 0%, #7a374e 60%, #18181b 100%);
+        color: #fff;
+        border: none;
+        box-shadow: none;
+        transition: box-shadow 0.3s, background 0.3s;
+        position: relative;
+        outline: none;
+      }
+      .discord-btn-navbar:hover {
+        box-shadow: 0 0 16px 0 #fa6880cc, 0 0 8px 0 #fff2;
+        background: linear-gradient(45deg, #e04176 0%, #fa6880 40%, #18181b 100%);
+      }
+      .discord-btn-navbar-text {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        font-family: inherit;
+      }
+      .choose-btn.bg-gradient-to-r.from-\[\#222\].to-\[\#f84965\]:hover {
+        background: linear-gradient(90deg, #f84965 0%, #222 100%) !important;
+        color: #fff !important;
+        border-color: #f84965 !important;
+      }
+      .choose-btn:not(.bg-gradient-to-r):hover {
+        background: linear-gradient(90deg, #222 0%, #f84965 100%) !important;
+        color: #fff !important;
+        border: 2px solid #f84965 !important;
+      }
+      .payment-card {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 32px 0 rgba(0,0,0,0.32), 0 1.5px 8px 0 rgba(255,255,255,0.08);
+        transition: box-shadow 0.3s, transform 0.3s;
+      }
+      .payment-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #ffffff00 35%, #ffffff13 50%, #ffffff00 65%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        z-index: 1;
+      }
+      .payment-card:hover {
+        box-shadow:
+          0 12px 40px 0 #fa688027,
+          0 2px 12px 0 #fa688027,
+          -24px 0 48px -16px #fa688027,
+          24px 0 48px -16px #fa688027;
+        transform: scale(1.04);
+        transition: box-shadow 0.3s;
+      }
+      .payment-card:hover::before {
+        opacity: 1;
+        animation: pricing-glow-move-horizontal 2s linear infinite;
+      }
+      .payment-btn {
+        transition: background 0.3s, color 0.3s;
+      }
+      .payment-btn:hover {
+        background: linear-gradient(90deg, #f84965 0%, #222 100%) !important;
+        color: #fff !important;
+      }
+    </style>
+    <style>
+      .sakura-gradient-text {
+        background: linear-gradient(90deg, #f84965 0%, #ff95a7 60%, #f84965 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        line-height: 1.15;
+        padding-bottom: 0.15em;
+      }
+    </style>
+    <style>
+      .pricing-card {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 32px 0 #ff000000, 0 1.5px 8px 0 #ffffff14;
+        z-index: 2;
+      }
+      .pricing-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #ffffff00 35%, #ffffff13 50%, #ffffff00 65%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        z-index: 1;
+      }
+      .pricing-card:hover::before {
+        opacity: 1;
+        animation: pricing-glow-move-horizontal 2s linear infinite;
+      }
+      @keyframes pricing-glow-move-horizontal {
+        0% { transform: translateX(-100%) rotate(0deg); }
+        100% { transform: translateX(100%) rotate(0deg); }
+      }
+      .pricing-recommended-badge {
+        position: absolute;
+        top: -18px;
+        right: -18px;
+        z-index: 50;
+        background: linear-gradient(90deg, #f84965 0%, #ff9f9f 60%, #f84965 100%);
+        color: #ffffff;
+        font-size: 0.95rem;
+        font-weight: bold;
+        padding: 0.25rem 1.1rem;
+        border-radius: 9999px;
+        box-shadow: 0 8px 32px 0 #f8496667, 0 1.5px 8px 0 #f84966a6;
+        border: 1px solid #ffffff2e;
+        pointer-events: auto;
+        transition: box-shadow 0.3s, background 0.3s;
+        animation: recommended-badge 0.8s cubic-bezier(.6,.2,.3,1.1);
+      }
+      @keyframes recommended-badge {
+        0% { opacity: 0; transform: translateY(-12px) scale(0.95); }
+        60% { opacity: 1; transform: translateY(2px) scale(1.04); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      .animate-recommended-badge {
+        animation: recommended-badge 0.8s cubic-bezier(.6,.2,.3,1.1);
+      }
+    </style>
+    <footer class="text-white py-16 border-t border-white/10 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white/50 text-sm">
+          © 2025 Sakura Bot. All rights reserved.  • Made by @xanax & @sanntilua • Not affiliated with Discord Inc.
+        </div>
+      </div>
+    </footer>
+    <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+      }
+      // Dynamic navbar island effect on scroll
+      const navbar = document.getElementById('navbar-main');
+      navbar.style.marginTop = '0px';
+      navbar.style.width = '100%';
+      navbar.style.marginLeft = 'auto';
+      navbar.style.marginRight = 'auto';
+      navbar.style.borderRadius = '0';
+      navbar.style.boxShadow = 'none';
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 32) {
+          navbar.style.marginTop = '24px';
+          navbar.style.width = '90%';
+          navbar.style.marginLeft = 'auto';
+          navbar.style.marginRight = 'auto';
+          navbar.style.borderRadius = '2.5rem';
+          navbar.style.boxShadow = '0 0 32px 0 rgba(250, 104, 128, 0.365), 0 2px 12px 0 rgba(255,255,255,0.08)';
+        } else {
+          navbar.style.marginTop = '0px';
+          navbar.style.width = '100%';
+          navbar.style.marginLeft = 'auto';
+          navbar.style.marginRight = 'auto';
+          navbar.style.borderRadius = '0';
+          navbar.style.boxShadow = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

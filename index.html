@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sakura Bot</title>
+    <link rel="icon" type="image/x-icon" href="sakuraicontop1.png">
+    <meta content="#fa68801e" data-react-helmet="true" name="theme-color" />
+    <meta
+      name="title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      name="description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta
+      property="og:title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      property="og:description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="og:image" content="logo1.png" />
+    <meta property="og:color" content="#d1d5db" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="#" />
+    <meta
+      property="twitter:title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      property="twitter:description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="twitter:image" content="logo1.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <!-- OGL library for animated background -->
+    <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.49/dist/ogl.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.2.2/tsparticles.bundle.min.js"></script>
+  </head>
+  <body
+    class="bg-black text-white max-h-[400px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400"
+  >
+    <div
+      id="loader"
+      class="fixed inset-0 bg-black z-50 flex items-center justify-center"
+    >
+      <div
+        class="w-12 h-12 border-4 border-gray-400 border-t-transparent rounded-full animate-spin"
+      ></div>
+    </div>
+    <nav class="fixed w-full z-50 top-0">
+      <div id="navbar-main" class="nav-blur bg-black/30 border-b border-white/10 transition-all duration-500">
+    <script>
+      // Dynamic navbar island effect on scroll
+      const navbar = document.getElementById('navbar-main');
+      // Inicialmente pegado arriba
+      navbar.style.marginTop = '0px';
+      navbar.style.width = '100%';
+      navbar.style.marginLeft = 'auto';
+      navbar.style.marginRight = 'auto';
+      navbar.style.borderRadius = '0';
+      navbar.style.boxShadow = 'none';
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 32) {
+          navbar.style.marginTop = '24px';
+          navbar.style.width = '90%';
+          navbar.style.marginLeft = 'auto';
+          navbar.style.marginRight = 'auto';
+          navbar.style.borderRadius = '2.5rem';
+          navbar.style.boxShadow = '0 0 32px 0 rgba(250, 104, 128, 0.365), 0 2px 12px 0 rgba(255,255,255,0.08)';
+        } else {
+          navbar.style.marginTop = '0px';
+          navbar.style.width = '100%';
+          navbar.style.marginLeft = 'auto';
+          navbar.style.marginRight = 'auto';
+          navbar.style.borderRadius = '0';
+          navbar.style.boxShadow = 'none';
+        }
+      });
+    </script>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <div class="flex items-center gap-2">
+              <img
+                src="sakuralogo1.png"
+                alt="Sakura Bot Logo"
+                class="w-16 h-16 rounded-xl object-contain"
+              />
+            </div>
+
+            <div class="hidden md:flex gap-8 justify-center flex-1">
+              <a href="#hero" class="nav-underline font-semibold">Home</a>
+              <a href="#features" class="nav-underline font-semibold">Features</a>
+              <a href="#commands" class="nav-underline font-semibold">Commands</a>
+              <a href="#testimonials" class="nav-underline font-semibold">Testimonials</a>
+              <a href="pricing.html" class="nav-underline font-semibold">Pricing</a>
+            </div>
+
+            <div class="md:hidden">
+              <button onclick="toggleMobileMenu()" class="text-white p-2">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    class="menu-icon"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <a href="#" class="hidden md:block">
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <button class="discord-btn-navbar">
+                  <img src="discord1.png" alt="Discord" class="discord-btn-navbar-img" width="24" height="24" />
+                  <span class="discord-btn-navbar-text">Add Bot</span>
+                </button>
+              </a>
+            </a>
+          </div>
+
+          <div id="mobileMenu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-black/50 rounded-lg mt-2">
+              <a
+                href="#hero"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Home</a
+              >
+              <a
+                href="#features"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Features</a
+              >
+              <a
+                href="#commands"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Commands</a
+              >
+              <a
+                href="#testimonials"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Testimonials</a
+              >
+              <a
+                href="pricing.html"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Pricing</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Add to Discord</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section id="hero" class="min-h-screen relative overflow-hidden">
+      <!-- Fondo de estrellas animadas -->
+      <div id="stars-bg" class="pointer-events-none absolute inset-0 z-0"></div>
+  <!-- Fondo de estrellas animadas -->
+  <div id="stars-bg" class="pointer-events-none absolute inset-0 z-0"></div>
+  <!-- Animated OGL background canvas -->
+      <canvas id="darkveil-canvas" class="darkveil-canvas"></canvas>
+      <div id="particles-bg"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-56 z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-20">
+          <div class="space-y-8 text-center lg:text-left" style="position: relative; z-index: 2;">
+            <!-- ...existing code... -->
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight" style="position: relative; z-index: 2;">
+              Boost your server with <span class="next-level-gradient">Sakura Bot</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-bold leading-tight" style="display:none; position: relative; z-index: 2;">
+              <span id="typewriter-text"></span>
+            </h2>
+            <p class="text-lg md:text-xl text-white/70" style="position: relative; z-index: 2;">
+              Experience Discord's most powerful bot with advanced moderation, ticketing, automation, and more.
+            </p>
+            <div class="flex flex-col gap-4 sm:flex-row sm:gap-8 justify-center lg:justify-start" style="position: relative; z-index: 2;">
+              <a href="https://discord.gg/n6cqRvynMt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gradient-bg px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity duration-300 text-gray-900 bg-gray-200 hover:bg-gray-300">
+                Join to Discord
+              </a>
+              <a href="#commands" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 px-8 py-4 rounded-xl font-semibold transition-colors duration-300">
+                View Commands
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-center lg:justify-start">
+            <div class="sakura-logo-circular">
+              <div class="sakura-logo-circular-glow"></div>
+              <img src="logo1.png" alt="Sakura Logo" class="sakura-logo-circular-img" />
+              <div class="sakura-logo-circular-petals"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Semicírculo rosado tipo planeta, solo borde y glow, abajo del hero -->
+        <div style="position: absolute; left: 50%; bottom: -320px; transform: translateX(-50%); width: 2400px; height: 340px; z-index: 2; pointer-events: none;">
+          <svg width="100%" height="100%" viewBox="0 0 2400 340" aria-hidden="true">
+            <defs>
+              <linearGradient id="sakura-gradient" x1="0" y1="0" x2="0" y2="1">
+                 <stop offset="0%" stop-color="#fa6880" stop-opacity="1" />
+                 <stop offset="30%" stop-color="#fa6880" stop-opacity="0.95" />
+                 <stop offset="60%" stop-color="#fa6880" stop-opacity="0.7" />
+                 <stop offset="100%" stop-color="#fa6880" stop-opacity="0.2" />
+              </linearGradient>
+              <filter id="outer-glow" x="-40%" y="-80%" width="180%" height="220%">
+                <feDropShadow dx="0" dy="-32" stdDeviation="32" flood-color="#fa6880" flood-opacity="0.8" />
+              </filter>
+              <linearGradient id="sakura-shadow-gradient" x1="0" y1="0" x2="0" y2="1">
+                 <stop offset="0%" stop-color="#fa6880" stop-opacity="0.5" />
+                 <stop offset="60%" stop-color="#fa6880" stop-opacity="0.15" />
+                 <stop offset="100%" stop-color="#fa6880" stop-opacity="0" />
+              </linearGradient>
+              <filter id="shadow-blur" x="-40%" y="-80%" width="180%" height="220%">
+                <feGaussianBlur stdDeviation="32" />
+              </filter>
+            </defs>
+            <!-- Sombra superior, difuminada y degradada, pegada a la línea -->
+            <path d="M0,345 Q1200,-75 2400,345" fill="none" stroke="url(#sakura-shadow-gradient)" stroke-width="32" stroke-linecap="round" filter="url(#shadow-blur)" opacity="0.7" />
+            <path d="M0,355 Q1200,-65 2400,355" fill="none" stroke="#fa6880" stroke-width="3" stroke-linecap="round" filter="url(#outer-glow)" opacity="0.7" />
+          </svg>
+        </div>
+      </div>
+      </script>
+    <!-- CurvedLoop placeholder: insert your React app or static SVG here if not using React directly -->
+<section id="features" class="py-32 relative" style="margin-top: 11rem;">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4">Features of Sakura Bot</h2>
+          <p class="text-xl text-white/70">
+            Everything you need to enhance and manage your Discord server with
+            ease.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="feature-card p-8 rounded-2xl group">
+            <div class="flex justify-center mb-6">
+              <img src="power.png" alt="Uptime" class="w-16 h-16 object-contain mx-auto" />
+            </div>
+            <h3 class="text-2xl font-bold mb-4 transition-colors duration-300 group-hover:text-[#f84965]">99.9% Uptime</h3>
+            <p class="text-white/70">
+              Sakura Bot runs 24/7 with industry-leading uptime, ensuring your
+              server is always managed without interruptions.
+            </p>
+          </div>
+          <div class="feature-card p-8 rounded-2xl group">
+            <div class="flex justify-center mb-6">
+              <img src="moderation.png" alt="Moderation" class="w-16 h-16 object-contain mx-auto" />
+            </div>
+            <h3 class="text-2xl font-bold mb-4 transition-colors duration-300 group-hover:text-[#f84965]">Powerful Moderation</h3>
+            <p class="text-white/70">
+              Keep your server safe with advanced moderation tools, including
+              bans, mutes, warnings, and automated filters.
+            </p>
+          </div>
+          <div class="feature-card p-8 rounded-2xl group">
+            <div class="flex justify-center mb-6">
+              <img src="giveaway.png" alt="Giveaways" class="w-16 h-16 object-contain mx-auto" />
+            </div>
+            <h3 class="text-2xl font-bold mb-4 transition-colors duration-300 group-hover:text-[#f84965]">Giveaways & Rewards</h3>
+            <p class="text-white/70">
+              Easily create giveaways with interactive join buttons, rerolls,
+              and customizable prize options for your community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Fondo de estrellas animadas
+      function createStars() {
+        const starsContainer = document.getElementById('stars-bg');
+        if (!starsContainer) return;
+        starsContainer.innerHTML = '';
+        const numStars = 120;
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement('div');
+          const size = Math.random() * 1.2 + 0.6;
+          const duration = Math.random() * 2 + 2.5;
+          star.style.position = 'absolute';
+          star.style.top = `${Math.random() * 100}%`;
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+          star.style.borderRadius = '50%';
+          star.style.background = 'white';
+          star.style.opacity = Math.random() * 0.7 + 0.2;
+          star.style.boxShadow = `0 0 ${Math.random() * 8 + 2}px #fff8`;
+          star.style.animation = `starTwinkle ${duration}s infinite alternate`;
+          starsContainer.appendChild(star);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', createStars);
+      window.addEventListener('resize', createStars);
+    </script>
+    <style>
+      #stars-bg {
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      @keyframes starTwinkle {
+        0% { opacity: 0.3; }
+        100% { opacity: 1; }
+      }
+    </style>
+
+    <section id="commands" class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4">Commands</h2>
+          <p class="text-xl text-white/70">
+            Explore all available bot commands
+          </p>
+        </div>
+      <div class="space-y-6" id="commands-container"></div>
+    </section>
+    <section id="testimonials" class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4 text-white">What Our Users Say</h2>
+          <p class="text-xl text-white/70">
+            See how Sakura Bot is transforming Discord server management for our
+            users.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card feature-card p-8 rounded-2xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl overflow-hidden">
+                <img class="w-full h-full object-cover rounded-full" src="fuckthat1.jpg" alt="User 1" />
+              </div>
+              <div>
+                <h4 class="text-xl font-bold" style="color:#f84965">@fuckthat</h4>
+                <p class="text-sm text-white/70">Sakura User</p>
+              </div>
+            </div>
+            <p class="text-white/70 text-lg mb-4">
+              "Muy completo y no se me complico ya que me lo instalo xanax al toque."
+            </p>
+          </div>
+          <div class="testimonial-card feature-card p-8 rounded-2xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl overflow-hidden">
+                <img class="w-full h-full object-cover rounded-full" src="livinglife1.jpg" alt="User 2" />
+              </div>
+              <div>
+                <h4 class="text-xl font-bold" style="color:#f84965">@livinglife</h4>
+                <p class="text-sm text-white/70">Sakura User</p>
+              </div>
+            </div>
+            <p class="text-white/70 text-lg mb-4">
+              "Fácil de usar, rápido y sin complicaciones. Ideal para cualquier server"
+            </p>
+          </div>
+          <div class="testimonial-card feature-card p-8 rounded-2xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl overflow-hidden">
+                <img class="w-full h-full object-cover rounded-full" src="lonely1.jpg" alt="User 3" />
+              </div>
+              <div>
+                <h4 class="text-xl font-bold" style="color:#f84965">@lonely</h4>
+                <p class="text-sm text-white/70">Sakura User</p>
+              </div>
+            </div>
+            <p class="text-white/70 text-lg mb-4">
+              "Los tickets andan joya y la moderación me ahorra banda de tiempo."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-black min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 md:p-16 lg:p-32"
+    >
+      <div class="text-center mb-20">
+        <h2 class="text-5xl font-bold mb-4 text-white">Connect With Us</h2>
+        <p class="text-xl text-white/70">
+          Join our community and contribute to development.
+        </p>
+      </div>
+      <div class="w-full max-w-2xl flex flex-col gap-8 items-center sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-8 w-full justify-center">
+          <div class="relative bg-white/5 border border-white/10 rounded-2xl p-0 w-full max-w-xs flex flex-col items-center feature-card overflow-hidden shadow-xl transition-all duration-300 hover:scale-[1.03]">
+            <div class="absolute inset-0 z-0 bg-cover bg-center blur-[2px] opacity-40" style="background-image: url('xanax1.jpg');"></div>
+            <div class="relative z-10 flex flex-col items-center p-8">
+              <img src="xanax1.jpg" alt="xanax" class="w-24 h-24 object-cover rounded-full mb-4 shadow-lg border-4 border-white/20 profile-img-glow" />
+              <h3 class="text-2xl font-bold mb-1 drop-shadow" style="color:#f84965">xanax</h3>
+              <p class="text-white/70 text-base mb-4">@fuckthexanax</p>
+              <div class="flex gap-6 mt-2 mb-4">
+                <a href="https://github.com/fuckthexanax" target="_blank" rel="noopener">
+                  <img src="github1.png" alt="GitHub" width="32" height="32" />
+                </a>
+                <a href="https://discord.com/users/753264072614608968" target="_blank" rel="noopener">
+                  <img src="discord1.png" alt="Discord" width="32" height="32" />
+                </a>
+              </div>
+              <!-- Botones eliminados -->
+              <a href="https://discord.com/users/753264072614608968" target="_blank" rel="noopener noreferrer">
+                <button class="px-6 py-2 rounded-xl font-semibold border border-gray-400 text-white bg-black/60 shadow-lg transition-all duration-300 hover:bg-neutral-900 hover:text-white hover:border-gray-700 focus:ring-0 active:bg-neutral-900">Contact me</button>
+              </a>
+            </div>
+          </div>
+          <div class="relative bg-white/5 border border-white/10 rounded-2xl p-0 w-full max-w-xs flex flex-col items-center feature-card overflow-hidden shadow-xl transition-all duration-300 hover:scale-[1.03]">
+            <div class="absolute inset-0 z-0 bg-cover bg-center blur-[2px] opacity-40" style="background-image: url('sanntilua1.jpg');"></div>
+            <div class="relative z-10 flex flex-col items-center p-8">
+              <img src="sanntilua1.jpg" alt="sanntilua" class="w-24 h-24 object-cover rounded-full mb-4 shadow-lg border-4 border-white/20 profile-img-glow" />
+              <h3 class="text-2xl font-bold mb-1 drop-shadow" style="color:#f84965">sanntilua</h3>
+              <p class="text-white/70 text-base mb-4">@sanntilua</p>
+              <div class="flex gap-6 mt-2 mb-4">
+                <a href="https://github.com/sanntilua" target="_blank" rel="noopener">
+                  <img src="github1.png" alt="GitHub" width="32" height="32" />
+                </a>
+                <a href="https://discord.com/users/557257510470287360" target="_blank" rel="noopener">
+                  <img src="discord1.png" alt="Discord" width="32" height="32" />
+                </a>
+              </div>
+              <!-- Botones eliminados -->
+              <a href="https://discord.com/users/557257510470287360" target="_blank" rel="noopener noreferrer">
+                <button class="px-6 py-2 rounded-xl font-semibold border border-gray-400 text-white bg-black/60 shadow-lg transition-all duration-300 hover:bg-neutral-900 hover:text-white hover:border-gray-700 focus:ring-0 active:bg-neutral-900">Contact me</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- ...existing code for Discord server card... -->
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-6 w-full max-w-md transition-colors feature-card"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <img
+              src="logosakura1.png"
+              alt="Server Icon"
+              class="w-12 h-12 rounded-xl"
+            />
+            <div>
+              <h3 class="text-xl font-bold" style="color:#f84965">Sakura Bot</h3>
+              <p class="text-white/70 text-sm">Official Discord Server</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4 text-white/70 text-sm">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                <span id="discord-online-count">0</span> Online
+              </div>
+              <div class="w-1 h-1 rounded-full bg-white/20"></div>
+              <span><span id="discord-members-count">0</span> Members</span>
+            </div>
+            <a
+              href="https://discord.gg/n6cqRvynMt"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-[#5865F2] hover:bg-[#4752C4] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+              >Join Server</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-center py-16">
+        <button
+          onclick="scrollToTop()"
+          class="group bg-white/5 border border-white/10 rounded-2xl p-4 transition-all hover:border-[#fa6880]"
+        >
+          <svg
+            class="w-6 h-6 text-white/70 group-hover:text-[#fa6880] transition-colors"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <footer class="text-white py-16 border-t border-white/10 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white/70 text-sm">
+          © 2025 Sakura Bot. All rights reserved.  • Made by @xanax & @sanntilua • Not affiliated with Discord Inc.
+        </div>
+      </div>
+    </footer>
+    <style>
+      .discord-btn-navbar-img {
+        margin-right: 0.5rem;
+        vertical-align: middle;
+        filter: brightness(0) invert(1) drop-shadow(0 0 8px #fff8);
+        transition: filter 0.3s;
+      }
+      .discord-btn-navbar:hover .discord-btn-navbar-img {
+        filter: brightness(0) invert(1) drop-shadow(0 0 16px #fa6880cc);
+      }
+      .discord-btn-navbar {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.7rem 2rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border-radius: 2rem;
+        background: linear-gradient(45deg, #e04176 0%, #7a374e 60%, #18181b 100%);
+        color: #fff;
+        border: none;
+        box-shadow: none;
+        transition: box-shadow 0.3s, background 0.3s;
+        position: relative;
+        outline: none;
+      }
+      .discord-btn-navbar:hover {
+        box-shadow: 0 0 16px 0 #fa6880cc, 0 0 8px 0 #fff2;
+        background: linear-gradient(45deg, #e04176 0%, #fa6880 40%, #18181b 100%);
+      }
+      .discord-btn-navbar-text {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        font-family: inherit;
+      }
+      .discord-btn-navbar-icon {
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+      .sakura-logo-circular {
+        position: relative;
+        display: inline-block;
+        width: 20rem;
+        height: 20rem;
+        max-width: 100%;
+        border-radius: 50%;
+        overflow: visible;
+        z-index: 1;
+        box-shadow: 0 0 48px 0 #fa6880a0, 0 0 0 12px #e0417620;
+        animation: sakuraLogoFloatCircle 3s ease-in-out infinite alternate;
+        background: radial-gradient(circle at 60% 40%, #fa6880 0%, #e04176 60%, #18181b 100%);
+      }
+      .sakura-logo-circular-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 0 64px 0 #fa6880cc, 0 0 24px 0 #fff8;
+        filter: drop-shadow(0 0 32px #fa6880) drop-shadow(0 0 12px #fff8);
+        transition: filter 0.3s, box-shadow 0.3s;
+        animation: sakuraLogoPulseCircle 2.5s infinite alternate;
+        position: relative;
+        z-index: 2;
+      }
+      .sakura-logo-circular:hover .sakura-logo-circular-img {
+        filter: drop-shadow(0 0 64px #fa6880cc) drop-shadow(0 0 24px #fff8) brightness(1.12);
+        box-shadow: 0 0 96px 0 #fa6880cc, 0 0 32px 0 #fff4;
+      }
+      .sakura-logo-circular-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 140%;
+        height: 140%;
+        border-radius: 50%;
+        background: radial-gradient(circle, #fa6880 0%, #e04176 60%, #18181b 100%);
+        opacity: 0.22;
+        filter: blur(40px);
+        z-index: 1;
+        pointer-events: none;
+        animation: sakuraGlowPulseCircle 3s infinite alternate;
+      }
+      .sakura-logo-circular-petals {
+        position: absolute;
+        top: 8%;
+        left: 78%;
+        width: 4rem;
+        height: 4rem;
+        z-index: 3;
+        pointer-events: none;
+        background: url('sakuraicontop1.png') no-repeat center center / contain;
+        opacity: 0.98;
+        animation: sakuraPetalSpinCircle 7s linear infinite;
+      }
+      @keyframes sakuraLogoPulseCircle {
+        0% {
+          filter: drop-shadow(0 0 24px #fa6880) drop-shadow(0 0 8px #fff8);
+        }
+        100% {
+          filter: drop-shadow(0 0 64px #fa6880cc) drop-shadow(0 0 24px #fff8) brightness(1.12);
+        }
+      }
+      @keyframes sakuraLogoFloatCircle {
+        0% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(-24px);
+        }
+      }
+      @keyframes sakuraGlowPulseCircle {
+        0% {
+          opacity: 0.16;
+        }
+        100% {
+          opacity: 0.32;
+        }
+      }
+      @keyframes sakuraPetalSpinCircle {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+        100% {
+          transform: rotate(360deg) scale(1.12);
+        }
+      }
+  /* Brillo en iconos de Discord y GitHub al pasar el mouse */
+  a:hover img[src="discord1.png"],
+  a:hover img[src="github1.png"] {
+    filter: drop-shadow(0 0 8px #f8496663) brightness(1.5);
+    transition: filter 0.3s, brightness 0.3s;
+  }
+  a:hover img[src="github1.png"] {
+    filter: drop-shadow(0 0 8px #f8496663) brightness(1.5);
+  }
+      @keyframes sakuraPulse {
+        0% {
+          filter: drop-shadow(0 0 8px #000000);
+        }
+        100% {
+          filter: drop-shadow(0 0 18px #000000);
+        }
+      }
+    </style>
+    <style>
+      .next-level-gradient {
+        background: linear-gradient(90deg, #ffffff 0%, #e04176 60%, #ff0055 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+      }
+    </style>
+    <!-- Fondo de estrellas animadas -->
+<script>
+  // Fondo de estrellas animadas
+  function createStars() {
+    const starsContainer = document.getElementById('stars-bg');
+    if (!starsContainer) return;
+    starsContainer.innerHTML = '';
+    const numStars = 120;
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      const size = Math.random() * 1.2 + 0.6;
+      const duration = Math.random() * 2 + 2.5;
+      star.style.position = 'absolute';
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.borderRadius = '50%';
+      star.style.background = 'white';
+      star.style.opacity = Math.random() * 0.7 + 0.2;
+      star.style.boxShadow = `0 0 ${Math.random() * 8 + 2}px #fff8`;
+      star.style.animation = `starTwinkle ${duration}s infinite alternate`;
+      starsContainer.appendChild(star);
+    }
+  }
+  document.addEventListener('DOMContentLoaded', createStars);
+  window.addEventListener('resize', createStars);
+</script>
+<style>
+  #stars-bg {
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  @keyframes starTwinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+  }
+</style>
+  </body>
+</html>
